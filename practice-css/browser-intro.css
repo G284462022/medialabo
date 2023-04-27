@@ -1,5 +1,6 @@
 p {
-	color: #dfdfdf;
+	color: navy;
+	background-color: #dfdfdf;
 	font-size: small;
 }
 
@@ -8,12 +9,16 @@ p.info {
 }
 
 h1 {
+	color: white;
 	background-color: #7f7fcf;
 }
 
 h2 {
+	font-family: cursive;
+	color: #3f3faf;
 	border: solid 1px black;
 	margin: 5px;
+	background: linear-gradient(white,#ffefaf);
 }
 
 div#zentai {
@@ -26,5 +31,9 @@ div#zentai {
 
 div#zentai > div {
 	padding: 5px;
+	text-shadow: navy;
 	background-color: #ffefaf;
+}
+img.sign{
+	float: right;
 }
