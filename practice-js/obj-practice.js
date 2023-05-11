@@ -13,7 +13,6 @@ let gakka = [
 	{name: "情報工学科", ename: "Department of Computer Science"},
 	{name: "デザイン学科", ename: "Department of Design"}
 ];
-
 //////////////// ここから下にプログラムを書きたそう!
 console.log(campus.address);
 for(let n of campus.buildingD){
