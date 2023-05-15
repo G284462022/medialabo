@@ -57,7 +57,7 @@ let data = {
           },
           "midnight": "営業していない",
           "mobile_access": "京王八王子駅1分/JR八王子駅北口5分",
-          "name": "バグダッドカフェ Bagdadcafe/モータウン MOTOWN",//ここ
+          "name": "バグダッドカフェ Bagdadcafe/モータウン MOTOWN",
           "name_kana": "ばぐだっどかふぇもーたうんはちおうじ",
           "non_smoking": "禁煙席なし",
           "open": "月～日、祝日、祝前日: 17:00～21:00 （料理L.O. 20:00 ドリンクL.O. 20:00）",
@@ -202,4 +202,11 @@ let data = {
   /////////// 課題3-2 ここからプログラムを書こう
   for(let n of data.results.shop){
     console.log(n.name);
+  }
+  for(let m of data.results.shop){
+    console.log(m.access);
+    console.log(m.address);
+    console.log(m.budget.average);
+    console.log(m.catch);
+    console.log(m.genre.catch);
   }
