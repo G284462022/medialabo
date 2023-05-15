@@ -203,3 +203,10 @@ let data = {
   for(let n of data.results.shop){
     console.log(n.name);
   }
+  for(let m of data.results.shop){
+    console.log(m.access);
+    console.log(m.address);
+    console.log(m.budget.average);
+    console.log(m.catch);
+    console.log(m.genre.catch);
+  }
