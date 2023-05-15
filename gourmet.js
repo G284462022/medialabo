@@ -202,11 +202,9 @@ let data = {
   /////////// 課題3-2 ここからプログラムを書こう
   for(let n of data.results.shop){
     console.log(n.name);
-  }
-  for(let m of data.results.shop){
-    console.log(m.access);
-    console.log(m.address);
-    console.log(m.budget.average);
-    console.log(m.catch);
-    console.log(m.genre.catch);
+    console.log(n.access);
+    console.log(n.address);
+    console.log(n.budget.average);
+    console.log(n.catch);
+    console.log(n.genre.catch);
   }
