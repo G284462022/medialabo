@@ -8,14 +8,17 @@ let yoso;
 // 予想を4回実行する
 // 将来以下の hantei(); の4回の呼び出しを全て削除する
 // 代わりにここでは，ボタンを押したら hantei() を呼び出すイベント処理をする
-hantei();
+let bu = document.querySelector("button#zikko");
+bu.addEventListener("click", hantei);
 
 
 // ボタンを押した後の処理をする関数 hantei() の定義
 
-function hantei() {
+function hantei(){
   // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
-  yoso = 4;
+  let i = document.querySelector('input[name="botan"]');
+  let sei = i.value;
+  yoso = Number(sei);
   kaisu = kaisu + 1;
   let a = document.querySelector('span#kaisu');
   a.textContent = kaisu;
@@ -23,7 +26,7 @@ function hantei() {
   b.textContent = yoso;
   let c = document.querySelector('p#result');
 
-  console.log(kaisu + "回目の予想: " + yoso);
+  console.log(kaisu + "回目の予想: " + yoso );
 
   // 課題3-1: 正解判定する
   // kotae と yoso が一致するかどうか調べて結果を出力
@@ -33,18 +36,25 @@ function hantei() {
     seikai: "正解です．おめでとう!",
     tiisai: "まちがい．答えはもっと大きいですよ",
     ookii: "まちがい．答えはもっと小さいですよ",
+    sanmisu: "まちがい．答えは" + kotae + "でした．",
   };
   
   let kaisuugoe = {
     ooi: "答えは " + kotae + "でした．すでにゲームは終わっています",
   };
-  if (kaisu < 4){
+  if (kaisu < 3){
     if (kotae === yoso){
         c.textContent = seigo.seikai;
     }else if (kotae > yoso){
       c.textContent = seigo.tiisai;
     }else {
       c.textContent = seigo.ookii;
+    }
+  }else if(kaisu === 3){
+    if (kotae === yoso){
+      c.textContent = seigo.seikai;
+    }else{
+      c.textContent = seigo.sanmisu;
     }
   }else{
     c.textContent = kaisuugoe.ooi;
