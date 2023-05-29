@@ -22,6 +22,8 @@ function hantei(){
   kaisu = kaisu + 1;
   let a = document.querySelector('span#kaisu');
   a.textContent = kaisu;
+  let aa = document.querySelector('spend#kkk');
+  aa.textContent = "回目の予想: ";
   let b = document.querySelector('span#answer');
   b.textContent = yoso;
   let c = document.querySelector('p#result');
