@@ -33,7 +33,8 @@ function hantei(){
   // 課題3-1: 正解判定する
   // kotae と yoso が一致するかどうか調べて結果を出力
   // 課題3-1における出力先はコンソール
-
+  let hit = document.querySelector("p#hitokoto");
+  hit.textContent = "【判定結果】";
   let seigo = {
     seikai: "正解です．おめでとう!",
     tiisai: "まちがい．答えはもっと大きいですよ",
