@@ -1,4 +1,4 @@
-let data = {
+/*let data = {
     "results": {
       "api_version": "1.26",
       "results_available": 52,
@@ -198,13 +198,85 @@ let data = {
       ]
     }
   };
-  
-  /////////// 課題3-2 ここからプログラムを書こう
-  for(let n of data.results.shop){
-    console.log(n.name);
-    console.log(n.access);
-    console.log(n.address);
-    console.log(n.budget.average);
-    console.log(n.catch);
-    console.log(n.genre.catch);
+  */
+
+  let kensaku = document.querySelector("#kensaku");
+  kensaku.addEventListener('click', kensakusuru);
+
+
+
+  function kensakusuru(){
+    let g = ["G001","G002","G003","G004","G005","G006","G007","G008","G009","G010","G011","G012","G013","G014","G014","G015","G016","G017"];
+    let i = document.querySelector('input[name="botan"]');
+    let a = i.value;
+    let kore;
+    for(let n of g){
+      if(a === n){
+       kore = a;
+      }
+    }
+    let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + kore  + '.json';
+    
+    axios.get(url)
+		.then(hyouzi)
+		.catch(error)
+		.then(finish);
+
+    let aa = document.querySelector("#kekka");
+    aa.textContent = "検索結果";
+
+    let guruguru = ["居酒屋","ダイニングバー・バル","創作料理","和食","洋食","イタリアン・フレンチ","中華","焼肉・ホルモン","アジア・エスニック料理","各国料理","カラオケ・パーティ","バー・カクテル","ラーメン","カフェ・スイーツ","その他グルメ","お好み焼き・もんじゃ","韓国料理"]
+
+    for(let i = 0 ; i < 16 ; i = i + 1){
+      if(kore === "G00" + (1 + i)){
+        let uu = document.querySelector("p.daimei");
+        uu.textContent = guruguru[i];
+      }else if (kore === "G0" + (1 + i)){
+        let uu = document.querySelector("p.daimei");
+        uu.textContent = guruguru[i];
+      }
+    }
   }
+
+  function hyouzi(resp){
+    let data = resp.data;
+    let jouhou = ["tennpomei", "kankyou", "juusyo", "onedann", "sa-bisu", "tokutyou"]
+    let syousai = ["name","access","address","budget.average","catch","genre.catch"];
+
+    
+    for(let i = 0 ; i < 6 ; i = i + 1){ 
+      let fd = document.querySelector('p.' + jouhou[i]);
+      console.log(fd);
+      console.log(data.results.shop[i]);
+      //fd.textContent = data.results.shop[i] + '.' + syousai[i]
+      fd.textContent = data.results.shop[0][syousai[i]];
+    }
+    let onedan = document.querySelector("p.onedann");
+    onedan.textContent = data.results.shop[0].budget.average;
+    let tokutyou = document.querySelector("p.tokutyou");
+    tokutyou.textContent = data.results.shop[0].genre.catch;
+    for(let n of data.results.shop){
+      console.log(n.name);
+      console.log(n.access);
+      console.log(n.address);
+      console.log(n.budget.average);
+      console.log(n.catch);
+      console.log(n.genre.catch);
+    }
+  } 
+  
+  function error(err){
+    console.log(err);
+  }
+
+  function finish(){
+    console.log("通信が終わりました。");
+  }
+  
+
+
+
+
+
+  /////////// 課題3-2 ここからプログラムを書こう
+  
