@@ -245,7 +245,7 @@
     }else if (a === "韓国料理"){
       kakai = 16;
     }
-    
+    let kore;
     kore = g[kakai];
     let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + kore  + '.json';
     
