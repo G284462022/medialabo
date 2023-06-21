@@ -209,12 +209,44 @@
     let g = ["G001","G002","G003","G004","G005","G006","G007","G008","G009","G010","G011","G012","G013","G014","G014","G015","G016","G017"];
     let i = document.querySelector('input[name="botan"]');
     let a = i.value;
-    let kore;
-    for(let n of g){
-      if(a === n){
-       kore = a;
-      }
+    let kakai;
+    if(a === "居酒屋"){
+      kakai = 0;
+    }else if(a === "ダイニングバー・バル"){
+      kakai = 1;
+    }else if (a === "創作料理"){
+      kakai = 2;
+    }else if (a === "和食"){
+      kakai = 3;
+    }else if (a === "洋食"){
+      kakai = 4;
+    }else if (a === "イタリアン・フレンチ"){
+      kakai = 5;
+    }else if (a === "中華"){
+      kakai = 6;
+    }else if (a === "焼肉・ホルモン") {
+      kakai = 7;
+    }else if (a === "アジア・エスニック料理") {
+      kakai = 8;
+    }else if (a === "各国料理"){
+      kakai = 9;
+    }else if (a === "カラオケ・パーティ"){
+      kakai = 10;
+    }else if (a === "バー・カクテル"){
+      kakai = 11;
+    }else if (a === "ラーメン"){
+      kakai = 12;
+    }else if (a === "カフェ・スイーツ"){
+      kakai = 13;
+    }else if (a === "その他グルメ"){
+      kakai = 14;
+    }else if (a === "お好み焼き・もんじゃ"){
+      kakai = 15;
+    }else if (a === "韓国料理"){
+      kakai = 16;
     }
+    let kore;
+    kore = kakai;
     let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + kore  + '.json';
     
     axios.get(url)
