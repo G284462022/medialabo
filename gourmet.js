@@ -246,7 +246,7 @@
       kakai = 16;
     }
     let kore;
-    kore = kakai;
+    kore = g[kakai];
     let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + kore  + '.json';
     
     axios.get(url)
