@@ -1,5 +1,5 @@
 let btn = document.querySelector("button#calc");
-btn = addEventListener("click", keisan);
+btn.addEventListener("click", keisan);
 let kotae = document.querySelector("span#answer");
 
 function keisan(){
