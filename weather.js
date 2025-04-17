@@ -1,3 +1,16 @@
+let btn = document.querySelector("button#button");
+btn.addEventListener("click", siraberu);
+
+function siraberu(){
+  let input = document.querySelector("input[name=kensaku]");
+  let key = GetKey(input.value);
+  if(key === null){
+    console.log("検索できないワードが入力されています\n" + input.value);
+  }else {
+    console.log(key);
+  }
+}
+
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
@@ -98,3 +111,36 @@ let data = {
   "cod": 200
 };
 
+function GetKey(string){
+  let key;
+  for(let n of keyvalue){
+    if(n[1] === string){
+      key = n[0];
+      break;
+    }else if(n[2] === string){
+      key = n[0];
+      break;
+    }else if(n[3] === string){
+      key = n[0];
+      break;
+    }else{
+      key = null;
+    }
+  }
+  return key;
+}
+
+let keyvalue = [
+  [360630, "Cairo", "カイロ", "エジプト"],
+  [524901, "Moscow", "モスクワ", "ロシア"],
+  [993800, "Johannesburg", "ヨハネスブルク", "南アフリカ"],
+  [1816670, "Beijing", "北京", "中華人民共和国"],
+  [1850147, "Tokyo", "東京", "日本"],
+  [1880252, "Singapore", "", "シンガポール"],
+  [2147714, "Sydney", "シドニー", "オーストラリア"],
+  [2643743, "London", "ロンドン", "イギリス"],
+  [2968815, "Paris", "パリ", "フランス"],
+  [3451189, "Rio de Janeiro", "リオデジャネイロ", "ブラジル"],
+  [5128581, "New York", "ニューヨーク", "アメリカ合衆国"],
+  [5368361, "Los Angeles", "ロサンゼルス", "アメリカ合衆国"]
+]
